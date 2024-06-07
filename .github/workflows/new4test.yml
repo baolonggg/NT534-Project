@@ -28,9 +28,9 @@ jobs:
 
       - name: Install Azure PowerShell version 2.19.0
         run: |
-          Install-Module -Name Az -RequiredVersion 2.19.0 -Scope CurrentUser -Force
+          Install-Module -Name Az.Accounts -RequiredVersion 2.19.0
         shell: pwsh
-        
+
       - name: Log into Azure subscription
         uses: azure/login@v1
         with:
