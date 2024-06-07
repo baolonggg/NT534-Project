@@ -25,14 +25,14 @@ jobs:
     steps:
       - name: Get application code from repo
         uses: actions/checkout@v2
-      
+
+      - name: Install Azure PowerShell version 2.19.0
+        run: |
+          Install-Module -Name Az -RequiredVersion 2.19.0 -Scope CurrentUser -Force
+        shell: pwsh
+        
       - name: Log into Azure subscription
         uses: azure/login@v1
-        shell: pwsh
-        run: |
-          Install-Module -Name Az -RequiredVersion 11.3.1 -Scope CurrentUser -Force
-          Install-Module -Name Az.Accounts -RequiredVersion 2.19.0 -Scope CurrentUser -Force
-          Import-Module Az.Accounts
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
