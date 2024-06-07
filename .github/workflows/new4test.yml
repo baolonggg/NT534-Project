@@ -26,6 +26,11 @@ jobs:
       - name: Get application code from repo
         uses: actions/checkout@v2
       
+      - name: Install Azure PowerShell
+        run: |
+          Install-Module -Name Az.Accounts -RequiredVersion 2.19.0 -Scope CurrentUser -Force
+          Import-Module /usr/share/az_11.3.1/Az.Accounts/2.19.0/Az.Accounts.psd1
+
       - name: Log into Azure subscription
         uses: azure/login@v1
         with:
