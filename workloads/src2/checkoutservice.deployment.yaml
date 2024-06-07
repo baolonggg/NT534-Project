@@ -28,7 +28,7 @@ spec:
                 - ALL
             privileged: false
             readOnlyRootFilesystem: true
-        image: acr4nt534project.azurecr.io/checkoutservice:10
+        image: acr4nt534project.azurecr.io/checkoutservice:9
           ports:
           - containerPort: 5050
           readinessProbe:
