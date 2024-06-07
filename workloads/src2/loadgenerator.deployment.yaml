@@ -64,7 +64,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: acr4nt534.azurecr.io/loadgenerator:9
+        image: acr4nt534project.azurecr.io/loadgenerator:9
         env:
         - name: FRONTEND_ADDR
           value: "frontend:80"
