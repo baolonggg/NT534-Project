@@ -168,7 +168,7 @@ jobs:
         run: |
           export PATH=$PATH:/home/runner/.kubescape/bin
           cd workloads/${{ inputs.APPNAME }}
-          kubescape scan framework nsa --severity-threshold=critical
+          kubescape scan --severity-threshold=critical
   Update-K8s-Manifests:
     name: Update K8s Deployment Manifest with Image Version
     needs: Run-Kubescape
